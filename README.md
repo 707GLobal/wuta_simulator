@@ -1,5 +1,8 @@
-架构设计
+## 架构设计
+
 新建 1 个包，所有脚本用 Python 3 实现（快速开发，不编译）。
+
+```Plain Text
 src/simulation/wuta_simulator/
 ├── package.xml
 ├── setup.py
@@ -18,3 +21,4 @@ src/simulation/wuta_simulator/
     ├── trackdrive.yaml         # 赛道追逐赛道定义
     ├── skidpad.yaml            # 八字绕桩赛道定义
     └── acceleration.yaml       # 直线加速赛道定义
+```
