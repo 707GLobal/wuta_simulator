@@ -1,0 +1,31 @@
+# ROS2 / colcon build 产物（每次 colcon build 重新生成）
+build/
+install/
+log/
+
+# Python 字节码缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ROS 运行日志
+.ros/
+*.log
+
+# Python 测试 / lint 缓存
+.pytest_cache/
+.mypy_cache/
+.tox/
+
+# Python egg-info（ament 安装生成）
+*.egg-info/
+*.egg/
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db

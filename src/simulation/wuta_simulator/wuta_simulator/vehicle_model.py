@@ -42,8 +42,22 @@ class VehicleModel(Node):
         self.timer = self.create_wall_timer(self.dt, self.step)
 
     def on_command(self, msg: Command):
-        self.speed = msg.speed          # m/s
-        self.angle = msg.angle          # 度
+        s = msg.speed          # m/s
+        a = msg.angle          # 度
+        s_ok = isinstance(s, (int, float)) and math.isfinite(s)
+        a_ok = isinstance(a, (int, float)) and math.isfinite(a)
+        if not s_ok:
+            self.get_logger().warn(
+                'Invalid speed=%s (not finite), keeping previous speed=%.3f m/s'
+                % (s, self.speed))
+        if not a_ok:
+            self.get_logger().warn(
+                'Invalid angle=%s (not finite), keeping previous angle=%.1f deg'
+                % (a, self.angle))
+        if not s_ok or not a_ok:
+            return
+        self.speed = s
+        self.angle = a
 
     def step(self):
         # 限幅转向角

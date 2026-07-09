@@ -6,7 +6,7 @@ from geometry_msgs.msg import TwistStamped
 
 class CANBusSimulator(Node):
     def __init__(self):
-        super().__init__('can_bus_simulator')
+        super().__init__('can_simulator')
 
         # 发布车速 → FSD controller_node  (#4 /localization/velocity)
         self.twist_pub = self.create_publisher(
@@ -18,7 +18,7 @@ class CANBusSimulator(Node):
             self.ground_truth_callback, 50)
 
         self.get_logger().info(
-            'CANBusSimulator started: /sim/ground_truth -> /localization/velocity')
+            'can_simulator started: /sim/ground_truth -> /localization/velocity')
 
     def ground_truth_callback(self, msg: Odometry):
         twist = TwistStamped()
@@ -39,7 +39,7 @@ def main(args=None):
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
-        node.get_logger().info('Shutting down CANBusSimulator...')
+        node.get_logger().info('Shutting down can_simulator...')
     finally:
         node.destroy_node()
         rclpy.shutdown()
