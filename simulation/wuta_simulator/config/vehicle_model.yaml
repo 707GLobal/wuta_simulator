@@ -1,0 +1,8 @@
+vehicle_model:
+  ros__parameters:
+    wheel_base: 1.53            # m, 轴距
+    max_steer_angle: 25.0       # deg, 最大前轮转角
+    dt: 0.02                    # s, 仿真步长 (50Hz)
+    start_x: 0.0                # m, 初始 x
+    start_y: 0.0                # m, 初始 y
+    start_yaw: 0.0              # rad, 初始航向

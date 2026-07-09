@@ -1,0 +1,32 @@
+from setuptools import find_packages, setup
+
+package_name = 'wuta_simulator'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=find_packages(exclude=['test']),
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/config', ['config/vehicle_model.yaml']),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='czh',
+    maintainer_email='czh@todo.todo',
+    description='TODO: Package description',
+    license='TODO: License declaration',
+    extras_require={
+        'test': [
+            'pytest',
+        ],
+    },
+    entry_points={
+        'console_scripts': [
+            'vehicle_model = wuta_simulator.vehicle_model:main',
+            'can_simulator = wuta_simulator.can_simulator:main',
+        ],
+    },
+)
