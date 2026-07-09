@@ -3,8 +3,8 @@
 <package format="3">
   <name>wuta_simulator</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="czh@todo.todo">czh</maintainer>
+  <description>wuta_simulator</description>
+  <maintainer email="wuta@todo.todo">wuta</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_python</buildtool_depend>

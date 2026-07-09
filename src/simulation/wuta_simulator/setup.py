@@ -14,8 +14,8 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='czh',
-    maintainer_email='czh@todo.todo',
+    maintainer='wuta',
+    maintainer_email='wuta@todo.todo',
     description='TODO: Package description',
     license='TODO: License declaration',
     extras_require={
